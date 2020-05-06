@@ -18,17 +18,17 @@ class clock:
         try:
             while True:
                 self.seconds += 1
-                if self.seconds == 60:
+                if self.seconds >= 60:
                     self.minutes += 1
                     self.seconds = 0
-                if self.minutes == 60:
+                if self.minutes >= 60:
                     self.hours += 1
                     self.minutes = 0
-                if self.hours == 60:
+                if self.hours >= 24:
                     self.hours = 0
                 time.sleep(1)
                 print(f"{self.hours}:{self.minutes}:{self.seconds}" ,end ='\r',flush =True)
-                sys.stdout.flush()
+                # sys.stdout.flush()
         except KeyboardInterrupt:
             print("Your Clock Stopped")
 start = clock()
